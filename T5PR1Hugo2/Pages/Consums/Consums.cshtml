@@ -1,0 +1,87 @@
+﻿@page
+@model T5PR1Hugo2.Pages.Consums.ConsumsModel
+@{
+	ViewData["Title"] = "ConsumsList";
+}
+<h3>@ViewData["Title"]</h3>
+<hr />
+<p>
+	<a asp-page="./Create" class="btn btn-primary">Create New</a>
+</p>
+<table class="table table-success table-striped table-responsive table-hover">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Consums[0].Any)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Consums[0].CodiComarca)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Consums[0].Comarca)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Consums[0].Poblacio)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Consums[0].DomesticXarxa)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Consums[0].ActivitatsEconomiques)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Consums[0].Total)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Consums[0].ConsumDomesticPerCapita)
+			</th>
+			<th>
+				Action
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@if (Model.Consums != null && Model.Consums.Any())
+		{
+			foreach (var item in Model.Consums)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.Any)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.CodiComarca)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Comarca)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Poblacio)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.DomesticXarxa)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.ActivitatsEconomiques)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Total)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.ConsumDomesticPerCapita)
+					</td>
+					<td>
+						<a asp-page="/Energies/Edit" asp-route-itemid="@item.CodiComarca" class="btn btn-primary">Edit</a> |
+						<a asp-page="./Delete" asp-route-itemid="@item.CodiComarca" class="btn btn-danger">Delete</a>
+					</td>
+				</tr>
+			}
+		}
+		else
+		{
+			<tr>
+				<td colspan="11" class="text-center">No Consumes found</td>
+			</tr>
+		}
+	</tbody>
+</table>

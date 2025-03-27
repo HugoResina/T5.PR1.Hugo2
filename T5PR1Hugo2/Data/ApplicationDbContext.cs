@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using T5PPR1Hugo2.Model;
+using T5PR1Hugo2.Model;
 
 namespace T5PPR1Hugo2.Data
 {
@@ -11,6 +12,7 @@ namespace T5PPR1Hugo2.Data
 		}
 
 		public DbSet<Simulation> Simulations { get; set; }
+        public DbSet<Consum> Consums { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
