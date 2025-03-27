@@ -25,7 +25,10 @@ namespace T5PPR1Hugo2.Data
 
             string connectionString = configuration.GetConnectionString("DefaultConnection");
             options.UseSqlServer(connectionString);
+
+
         }
-      
+        
+
     }
 }

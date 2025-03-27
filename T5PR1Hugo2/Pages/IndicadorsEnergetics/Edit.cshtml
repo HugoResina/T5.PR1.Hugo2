@@ -1,0 +1,51 @@
+﻿@page
+@model T5PR1Hugo2.Pages.IndicadorsEnergetics.EditModel
+@{
+	ViewData["Title"] = "Edit";
+}
+<h1>@ViewData["Title"]</h1>
+<hr />
+
+<div class="row shadow">
+	<div class="col-md-4">
+		<form method="post">
+			<input type="hidden" asp-for="Indicador.Id" />
+			<div class="form-group">
+				<label asp-for="Indicador.AnyDt" class="control-label"></label>
+				<input asp-for="Indicador.AnyDt" class="form-control" />
+				<span asp-validation-for="Indicador.AnyDt" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Indicador.ProduccioNeta" class="control-label"></label>
+				<input asp-for="Indicador.ProduccioNeta" class="form-control" />
+				<span asp-validation-for="Indicador.ProduccioNeta" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Indicador.ConsumGasolina" class="control-label"></label>
+				<input asp-for="Indicador.ConsumGasolina" class="form-control" />
+				<span asp-validation-for="Indicador.ConsumGasolina" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Indicador.DemandaElectrica" class="control-label"></label>
+				<input asp-for="Indicador.DemandaElectrica" class="form-control" />
+				<span asp-validation-for="Indicador.DemandaElectrica" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Indicador.ProduccioDisponible" class="control-label"></label>
+				<input asp-for="Indicador.ProduccioDisponible" class="form-control" />
+				<span asp-validation-for="Indicador.ProduccioDisponible" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Edit" class="btn btn-success" />
+				<a class="btn btn-secondary" asp-page="/IndicadorsEnergetics/IndicadorsEnergetics">Back to List</a>
+			</div>
+			
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

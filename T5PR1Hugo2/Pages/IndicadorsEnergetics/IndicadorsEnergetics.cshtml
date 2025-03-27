@@ -1,0 +1,76 @@
+﻿@page
+@model T5PR1Hugo2.Pages.IndicadorsEnergetics.IndicadorsEnergeticsModel
+@{
+	ViewData["Title"] = "IndicadorsEnergetics";
+}
+<h3>@ViewData["Title"]</h3>
+<hr />
+<p>
+	<a asp-page="/IndicadorsEnergetics/Create" class="btn btn-primary">Create New</a>
+</p>
+<table class="table table-success table-striped table-responsive table-hover">
+	<thead>
+		<tr>
+			
+			<th>
+				@Html.DisplayNameFor(model => model.Indicadors[0].Id)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Indicadors[0].AnyDt)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Indicadors[0].ProduccioNeta)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Indicadors[0].ConsumGasolina)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Indicadors[0].DemandaElectrica)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Indicadors[0].ProduccioDisponible)
+			</th>			
+			<th>
+				Action
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@if (Model.Indicadors != null && Model.Indicadors.Any())
+		{
+			foreach (var item in Model.Indicadors)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.Id)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.AnyDt)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.ProduccioNeta)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.ConsumGasolina)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.DemandaElectrica)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.ProduccioDisponible)
+					</td>
+					<td>
+						<a asp-page="./Edit" asp-route-itemid="@item.Id" class="btn btn-primary">Edit</a> |
+						<a asp-page="./Delete" asp-route-itemid="@item.Id" class="btn btn-danger">Delete</a>
+					</td>
+				</tr>
+			}
+		}
+		else
+		{
+			<tr>
+				<td colspan="11" class="text-center">No Indicators found</td>
+			</tr>
+		}
+	</tbody>
+</table>

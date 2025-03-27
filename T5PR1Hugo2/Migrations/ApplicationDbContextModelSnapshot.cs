@@ -74,7 +74,7 @@ namespace T5PR1Hugo2.Migrations
                     b.Property<double>("ActivitatsEconomiques")
                         .HasColumnType("float");
 
-                    b.Property<int>("Any")
+                    b.Property<int>("AnyD")
                         .HasColumnType("int");
 
                     b.Property<string>("Comarca")
@@ -97,6 +97,34 @@ namespace T5PR1Hugo2.Migrations
                     b.HasKey("CodiComarca");
 
                     b.ToTable("Consums");
+                });
+
+            modelBuilder.Entity("T5PR1Hugo2.Model.Indicador", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AnyDt")
+                        .HasColumnType("int");
+
+                    b.Property<double>("ConsumGasolina")
+                        .HasColumnType("float");
+
+                    b.Property<double>("DemandaElectrica")
+                        .HasColumnType("float");
+
+                    b.Property<double>("ProduccioDisponible")
+                        .HasColumnType("float");
+
+                    b.Property<double>("ProduccioNeta")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Indicadors");
                 });
 #pragma warning restore 612, 618
         }

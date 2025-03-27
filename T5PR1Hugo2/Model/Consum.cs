@@ -6,7 +6,6 @@ namespace T5PR1Hugo2.Model
 	public class Consum
 	{
 		
-	
 		public int AnyD { get; set; }
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
