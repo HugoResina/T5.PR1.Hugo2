@@ -1,0 +1,45 @@
+﻿@page
+@model T5PR1Hugo2.Pages.ConsumsAigua.DeleteModel
+@{
+	ViewData["Title"] = "Delete";
+}
+
+<div class="row shadow">
+	<input type="hidden" asp-for="Consum.CodiComarca" />
+	<div class="col-9">
+		<div class="form-group">
+			<label asp-for="Consum.AnyD" class="control-label"></label>
+			<input asp-for="Consum.AnyD" class="form-control" readonly/>
+		</div>
+		<div class="form-group">
+			<label asp-for="Consum.Comarca" class="control-label"></label>
+			<input asp-for="Consum.Comarca" class="form-control" readonly/>
+		</div>
+		<div class="form-group">
+			<label asp-for="Consum.Poblacio" class="control-label"></label>
+			<input asp-for="Consum.Poblacio" class="form-control" readonly/>
+		</div>
+		<div class="form-group">
+			<label asp-for="Consum.DomesticXarxa" class="control-label"></label>
+			<input asp-for="Consum.DomesticXarxa" class="form-control" readonly/>
+		</div>
+		<div class="form-group">
+			<label asp-for="Consum.ActivitatsEconomiques" class="control-label"></label>
+			<input asp-for="Consum.ActivitatsEconomiques" class="form-control" readonly/>
+		</div>
+		<div class="form-group">
+			<label asp-for="Consum.Total" class="control-label"></label>
+			<input asp-for="Consum.Total" class="form-control" readonly/>
+		</div>
+		<div class="form-group">
+			<label asp-for="Consum.ConsumDomesticPerCapita" class="control-label"></label>
+			<input asp-for="Consum.ConsumDomesticPerCapita" class="form-control" readonly/>
+		</div>
+		<form method="post">
+			<div class="form-group mt-2">
+				<input type="submit" value="Delete" class="btn btn-danger" />
+				<a class="btn btn-secondary" asp-page="/ConsumsAigua/ConsumsAigua">Back to List</a>
+			</div>
+		</form>
+	</div>
+</div>

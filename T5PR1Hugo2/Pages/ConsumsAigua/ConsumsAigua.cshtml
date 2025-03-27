@@ -1,18 +1,18 @@
 ﻿@page
-@model T5PR1Hugo2.Pages.Consums.ConsumsModel
+@model T5PR1Hugo2.Pages.ConsumsAigua.ConsumsModel
 @{
 	ViewData["Title"] = "ConsumsList";
 }
 <h3>@ViewData["Title"]</h3>
 <hr />
 <p>
-	<a asp-page="./Create" class="btn btn-primary">Create New</a>
+	<a asp-page="/ConsumsAigua/Create" class="btn btn-primary">Create New</a>
 </p>
 <table class="table table-success table-striped table-responsive table-hover">
 	<thead>
 		<tr>
 			<th>
-				@Html.DisplayNameFor(model => model.Consums[0].Any)
+				@Html.DisplayNameFor(model => model.Consums[0].AnyD)
 			</th>
 			<th>
 				@Html.DisplayNameFor(model => model.Consums[0].CodiComarca)
@@ -47,7 +47,7 @@
 			{
 				<tr>
 					<td>
-						@Html.DisplayFor(modelItem => item.Any)
+						@Html.DisplayFor(modelItem => item.AnyD)
 					</td>
 					<td>
 						@Html.DisplayFor(modelItem => item.CodiComarca)
@@ -71,8 +71,8 @@
 						@Html.DisplayFor(modelItem => item.ConsumDomesticPerCapita)
 					</td>
 					<td>
-						<a asp-page="/Energies/Edit" asp-route-itemid="@item.CodiComarca" class="btn btn-primary">Edit</a> |
-						<a asp-page="./Delete" asp-route-itemid="@item.CodiComarca" class="btn btn-danger">Delete</a>
+						<a asp-page="/ConsumsAigua/Edit" asp-route-itemid="@item.CodiComarca" class="btn btn-primary">Edit</a> |
+						<a asp-page="/ConsumsAigua/Delete" asp-route-itemid="@item.CodiComarca" class="btn btn-danger">Delete</a>
 					</td>
 				</tr>
 			}

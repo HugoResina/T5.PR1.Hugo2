@@ -13,6 +13,7 @@ namespace T5PPR1Hugo2.Data
 
 		public DbSet<Simulation> Simulations { get; set; }
         public DbSet<Consum> Consums { get; set; }
+        public DbSet<Indicador> Indicadors { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)

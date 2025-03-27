@@ -7,7 +7,7 @@ namespace T5PR1Hugo2.Model
 	{
 		
 	
-		public int Any { get; set; }
+		public int AnyD { get; set; }
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int CodiComarca { get; set; }

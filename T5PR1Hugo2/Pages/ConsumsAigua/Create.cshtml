@@ -1,0 +1,58 @@
+﻿@page
+@model T5PR1Hugo2.Pages.ConsumsAigua.CreateModel
+@{
+	ViewData["Title"] = "Create";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+
+<div class="row shadow">
+	<div class="col-md-4">
+		<form method="post">
+			<div class="form-group">
+				<label asp-for="consum.AnyD" class="control-label"></label>
+				<input asp-for="consum.AnyD" class="form-control" />
+				<span asp-validation-for="consum.AnyD" class="text-danger"></span>
+			<div class="form-group">
+					<label asp-for="consum.Comarca" class="control-label"></label>
+					<input asp-for="consum.Comarca" class="form-control" />
+					<span asp-validation-for="consum.Comarca" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+					<label asp-for="consum.Poblacio" class="control-label"></label>
+					<input asp-for="consum.Poblacio" class="form-control" />
+					<span asp-validation-for="consum.Poblacio" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+					<label asp-for="consum.DomesticXarxa" class="control-label"></label>
+					<input asp-for="consum.DomesticXarxa" class="form-control" />
+					<span asp-validation-for="consum.DomesticXarxa" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+					<label asp-for="consum.ActivitatsEconomiques" class="control-label"></label>
+					<input asp-for="consum.ActivitatsEconomiques" class="form-control" />
+					<span asp-validation-for="consum.ActivitatsEconomiques" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+					<label asp-for="consum.Total" class="control-label"></label>
+					<input asp-for="consum.Total" class="form-control" />
+					<span asp-validation-for="consum.Total" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+					<label asp-for="consum.ConsumDomesticPerCapita" class="control-label"></label>
+					<input asp-for="consum.ConsumDomesticPerCapita" class="form-control" />
+					<span asp-validation-for="consum.ConsumDomesticPerCapita" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Create" class="btn btn-primary" />
+				<a class="btn btn-secondary" asp-page="/ConsumsAigua/ConsumsAigua">Back to List</a>
+			</div>
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
