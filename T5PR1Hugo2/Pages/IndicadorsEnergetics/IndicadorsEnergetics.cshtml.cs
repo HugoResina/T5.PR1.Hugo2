@@ -29,30 +29,24 @@ namespace T5PR1Hugo2.Pages.IndicadorsEnergetics
                 {
                     _context.Indicadors.Add(i);
                 }
+                await _context.SaveChangesAsync();
 			}
 
 		}
         public static List<Indicador> WriteIndicadors()
         {
-            //read the file indicadors_energetics_cat.csv and write the data to the database 
-            //the csv returns this data:Data,PBEE_Hidroelectr,PBEE_Carbo,PBEE_GasNat,PBEE_Fuel-Oil,PBEE_CiclComb,PBEE_Nuclear,CDEEBC_ProdBruta,CDEEBC_ConsumAux,CDEEBC_ProdNeta,CDEEBC_ConsumBomb,CDEEBC_ProdDisp,CDEEBC_TotVendesXarxaCentral,CDEEBC_SaldoIntercanviElectr,CDEEBC_DemandaElectr,CDEEBC_TotalEBCMercatRegulat,CDEEBC_TotalEBCMercatLliure,FEE_Industria,FEE_Terciari,FEE_Domestic,FEE_Primari,FEE_Energetic,FEEI_ConsObrPub,FEEI_SiderFoneria,FEEI_Metalurgia,FEEI_IndusVidre,FEEI_CimentsCalGuix,FEEI_AltresMatConstr,FEEI_QuimPetroquim,FEEI_ConstrMedTrans,FEEI_RestaTransforMetal,FEEI_AlimBegudaTabac,FEEI_TextilConfecCuirCalçat,FEEI_PastaPaperCartro,FEEI_AltresIndus,DGGN_PuntFrontEnagas,DGGN_DistrAlimGNL,DGGN_ConsumGNCentrTerm,CCAC_GasolinaAuto,CCAC_GasoilA
-            //only use the data for the object Indicador: AnyDt, ProduccioNeta, ConsumGasolina, DemandaElectrica, ProduccioDisponible
-            string path = "Fitxers/indicadors_energetics_cat.csv";
+           string path = "Fitxers/indicadors_energetics_cat.csv";
             List<Indicador> indicadors = new List<Indicador>();
 
             using (var reader = new StreamReader(path))
             {
-                bool isFirstLine = true; 
+                reader.ReadLine();
 
                 while (!reader.EndOfStream)
                 {
                     var line = reader.ReadLine();
 
-                    if (isFirstLine)
-                    {
-                        isFirstLine = false; 
-                        continue;
-                    }
+                   
 
                     var values = line.Split(',');
                     Indicador indicador = new Indicador();
