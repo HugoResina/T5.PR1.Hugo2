@@ -1,0 +1,56 @@
+﻿@page
+@model T5PR1Hugo2.Pages.Energies.DeleteModel
+@{
+	ViewData["Title"] = "Delete";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+
+<div class="row shadow">
+	<input type="hidden" asp-for="Simulation.Id"/>
+	<div class="col-9">
+		<div class="form-group">
+			<label asp-for="Simulation.Tipus" class="control-label"></label>
+			<input asp-for="Simulation.Tipus" class="form-control" readonly/>
+		</div>
+		<div class="form-group">
+			<label asp-for="Simulation.HoresSol" class="control-label"></label>
+			<input asp-for="Simulation.HoresSol" class="form-control" readonly/>
+		</div>
+		<div class="form-group">
+			<label asp-for="Simulation.VelocitatVent" class="control-label"></label>
+			<input asp-for="Simulation.VelocitatVent" class="form-control" readonly/>
+		</div>
+		<div class="form-group">
+			<label asp-for="Simulation.CabalAigua" class="control-label"></label>
+			<input asp-for="Simulation.CabalAigua" class="form-control" readonly/>
+		</div>
+		<div class="form-group">
+			<label asp-for="Simulation.Rati" class="control-label"></label>
+			<input asp-for="Simulation.Rati" class="form-control" readonly/>
+		</div>
+		<div class="form-group">
+			<label asp-for="Simulation.EnergiaGenerada" class="control-label"></label>
+			<input asp-for="Simulation.EnergiaGenerada" class="form-control" readonly/>
+		</div>
+		<div class="form-group">
+			<label asp-for="Simulation.CostKWh" class="control-label"></label>
+			<input asp-for="Simulation.CostKWh" class="form-control" readonly/>
+		</div>
+		<div class="form-group">
+			<label asp-for="Simulation.PreuKWh" class="control-label"></label>
+			<input asp-for="Simulation.PreuKWh" class="form-control" readonly/>
+		</div>
+		<div class="form-group">
+			<label asp-for="Simulation.DataHora" class="control-label"></label>
+			<input asp-for="Simulation.DataHora" class="form-control" readonly/>
+		</div>
+		<form method="post">
+			<div class="form-group mt-2">
+				<input type="submit" value="Delete" class="btn btn-danger" />
+				<a class="btn btn-secondary" asp-page="/Energies/Simulations">Back to List</a>
+			</div>
+		</form>
+	</div>
+</div>
